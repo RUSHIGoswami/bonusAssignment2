@@ -69,10 +69,29 @@ class spiral{
         // Using forEach loop because it has cleanner syntax.
         for(int[] row: spiralledMatrix){
             for(int i: row){
-                if(i>9)
-                    System.out.print(i+" ");
-                else
-                    System.out.print(i+"  ");
+                if(row.length > 31){
+                    if(i<=9)
+                        System.out.print(i+"    ");
+                    else if(i<100)
+                        System.out.print(i+"   ");
+                    else if(i<999)
+                        System.out.print(i+"  ");
+                    else
+                        System.out.print(i+" ");
+                }
+                else if(row.length >= 10){
+                    if(i<=9)
+                        System.out.print(i+"   ");
+                    else if(i<100)
+                        System.out.print(i+"  ");
+                    else
+                        System.out.print(i+" ");
+                }else{
+                    if(i<9)
+                        System.out.print(i+"  ");
+                    else
+                        System.out.print(i+" ");
+                }
             }
             System.out.println();
         }
